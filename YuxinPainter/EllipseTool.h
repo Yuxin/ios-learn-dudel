@@ -1,14 +1,14 @@
 //
-//  PencilTool.h
+//  EllipseTool.h
 //  YuxinPainter
 //
 //  Created by 杨裕欣 on 12-2-22.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Tool.h"
 
-@interface PencilTool : NSObject <Tool>
-+ (PencilTool *)sharedPencilTool;
+@interface EllipseTool :NSObject <Tool>
++ (EllipseTool *)sharedRectangleTool;
 @end

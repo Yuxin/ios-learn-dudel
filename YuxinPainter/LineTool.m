@@ -1,27 +1,27 @@
 //
-//  PencilTool.m
+//  LineTool.m
 //  YuxinPainter
 //
 //  Created by 杨裕欣 on 12-2-22.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-#import "PencilTool.h"
+#import "LineTool.h"
 #import "Tool.h"
 #import "PathDrawingInfo.h"
 
-@interface PencilTool() 
-@property (nonatomic, strong) NSMutableArray *trackingTouches;
+@interface LineTool()
 @property (nonatomic, strong) NSMutableArray *startPoints;
 @property (nonatomic, strong) NSMutableArray *paths;
+@property (nonatomic, strong) NSMutableArray *trackingTouches;
 @end
 
-@implementation PencilTool
+@implementation LineTool
 @synthesize delegate = _delegate;
-@synthesize trackingTouches = _trackingTouches, startPoints = _startPoints, paths = _paths;
+@synthesize startPoints = _startPoints, paths = _paths, trackingTouches = _trackingTouches;
 
-static PencilTool *_sharedInstance = nil;
-+ (PencilTool *)sharedPencilTool
+static LineTool *_sharedInstance;
++ (LineTool *)sharedLineTool
 {
     @synchronized(self)
     {
@@ -37,23 +37,22 @@ static PencilTool *_sharedInstance = nil;
 {
     self = [super init];
     if (self != nil) {
-        _trackingTouches = [[NSMutableArray alloc] init];
         _startPoints = [[NSMutableArray alloc] init];
-        _paths = [[NSMutableArray alloc] init];        
+        _paths = [[NSMutableArray alloc] init];
+        _trackingTouches = [[NSMutableArray alloc] init]; 
     }
     return self;
 }
 
-
-
 - (void)activate
 {
+    
 }
 - (void)deactivate
 {
-    [self.trackingTouches removeAllObjects];
     [self.startPoints removeAllObjects];
     [self.paths removeAllObjects];
+    [self.trackingTouches removeAllObjects];    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -79,20 +78,22 @@ static PencilTool *_sharedInstance = nil;
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UIView *touchedView = [self.delegate viewForUseWithTool:self];    
     for (UITouch *touch in [event allTouches]) {
         NSUInteger touchIndex = [self.trackingTouches indexOfObject:touch];
         if (touchIndex != NSNotFound) {
-            UIBezierPath *path = [self.paths objectAtIndex:touchIndex];
+            CGPoint location = [touch locationInView:touchedView];
+            CGPoint startPoint = [[self.startPoints objectAtIndex:touchIndex] CGPointValue];            
+            UIBezierPath *path = [[UIBezierPath alloc] init];
+            [path moveToPoint:startPoint];
+            [path addLineToPoint:location];
             PathDrawingInfo *info = [PathDrawingInfo pathDrawingInfoWithPath:path 
-                                                                   fillColor:[UIColor clearColor] 
+                                                                   fillColor:self.delegate.fillColor
                                                                  strokeColor:self.delegate.strokeColor];
             [self.delegate addDrawable:info];
-            
-            [self.trackingTouches removeObjectAtIndex:touchIndex];
-            [self.startPoints removeObjectAtIndex:touchIndex];
-            [self.paths removeObjectAtIndex:touchIndex];
         }
     }
+    [self deactivate];
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -102,6 +103,9 @@ static PencilTool *_sharedInstance = nil;
         if (touchIndex != NSNotFound) {
             CGPoint location = [touch locationInView:touchedView];
             UIBezierPath *path = [self.paths objectAtIndex:touchIndex];
+            CGPoint startPoint = [[self.startPoints objectAtIndex:touchIndex] CGPointValue];
+            [path removeAllPoints];
+            [path moveToPoint:startPoint];
             [path addLineToPoint:location];
         }
     }
@@ -110,8 +114,10 @@ static PencilTool *_sharedInstance = nil;
 - (void)drawTemporary
 {
     for (UIBezierPath *path in self.paths) {
-        [self.delegate.strokeColor setStroke];
+        [[UIColor redColor] setStroke];
         [path stroke];
     }
 }
+
+
 @end
