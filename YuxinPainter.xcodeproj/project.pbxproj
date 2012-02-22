@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43114F4BBAC00B2985E /* UIKit.framework */; };
+		12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43314F4BBAC00B2985E /* Foundation.framework */; };
+		12E0F43614F4BBAC00B2985E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */; };
+		12E0F43C14F4BBAC00B2985E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F43A14F4BBAC00B2985E /* InfoPlist.strings */; };
+		12E0F43E14F4BBAC00B2985E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F43D14F4BBAC00B2985E /* main.m */; };
+		12E0F44214F4BBAC00B2985E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F44114F4BBAC00B2985E /* AppDelegate.m */; };
+		12E0F44514F4BBAC00B2985E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */; };
+		12E0F44814F4BBAC00B2985E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F44714F4BBAC00B2985E /* ViewController.m */; };
+		12E0F45914F4BBFB00B2985E /* button_bezier_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */; };
+		12E0F45A14F4BBFB00B2985E /* button_bezier.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45014F4BBFB00B2985E /* button_bezier.png */; };
+		12E0F45B14F4BBFB00B2985E /* button_cdots_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */; };
+		12E0F45C14F4BBFB00B2985E /* button_cdots.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45214F4BBFB00B2985E /* button_cdots.png */; };
+		12E0F45D14F4BBFB00B2985E /* button_ellipse_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45314F4BBFB00B2985E /* button_ellipse_selected.png */; };
+		12E0F45E14F4BBFB00B2985E /* button_ellipse.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45414F4BBFB00B2985E /* button_ellipse.png */; };
+		12E0F45F14F4BBFB00B2985E /* button_line_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45514F4BBFB00B2985E /* button_line_selected.png */; };
+		12E0F46014F4BBFB00B2985E /* button_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45614F4BBFB00B2985E /* button_line.png */; };
+		12E0F46114F4BBFB00B2985E /* button_rectangle_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45714F4BBFB00B2985E /* button_rectangle_selected.png */; };
+		12E0F46214F4BBFB00B2985E /* button_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45814F4BBFB00B2985E /* button_rectangle.png */; };
+		12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F46514F4BD6E00B2985E /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12E0F42D14F4BBAC00B2985E /* YuxinPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuxinPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12E0F43114F4BBAC00B2985E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		12E0F43314F4BBAC00B2985E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		12E0F43914F4BBAC00B2985E /* YuxinPainter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YuxinPainter-Info.plist"; sourceTree = "<group>"; };
+		12E0F43B14F4BBAC00B2985E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		12E0F43D14F4BBAC00B2985E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		12E0F43F14F4BBAC00B2985E /* YuxinPainter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YuxinPainter-Prefix.pch"; sourceTree = "<group>"; };
+		12E0F44014F4BBAC00B2985E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		12E0F44114F4BBAC00B2985E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		12E0F44414F4BBAC00B2985E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		12E0F44614F4BBAC00B2985E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		12E0F44714F4BBAC00B2985E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bezier_selected.png; sourceTree = "<group>"; };
+		12E0F45014F4BBFB00B2985E /* button_bezier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bezier.png; sourceTree = "<group>"; };
+		12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_cdots_selected.png; sourceTree = "<group>"; };
+		12E0F45214F4BBFB00B2985E /* button_cdots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_cdots.png; sourceTree = "<group>"; };
+		12E0F45314F4BBFB00B2985E /* button_ellipse_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_ellipse_selected.png; sourceTree = "<group>"; };
+		12E0F45414F4BBFB00B2985E /* button_ellipse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_ellipse.png; sourceTree = "<group>"; };
+		12E0F45514F4BBFB00B2985E /* button_line_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_line_selected.png; sourceTree = "<group>"; };
+		12E0F45614F4BBFB00B2985E /* button_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_line.png; sourceTree = "<group>"; };
+		12E0F45714F4BBFB00B2985E /* button_rectangle_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_rectangle_selected.png; sourceTree = "<group>"; };
+		12E0F45814F4BBFB00B2985E /* button_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_rectangle.png; sourceTree = "<group>"; };
+		12E0F46414F4BD6E00B2985E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		12E0F46514F4BD6E00B2985E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12E0F42A14F4BBAC00B2985E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */,
+				12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */,
+				12E0F43614F4BBAC00B2985E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12E0F42214F4BBAC00B2985E = {
+			isa = PBXGroup;
+			children = (
+				12E0F43714F4BBAC00B2985E /* YuxinPainter */,
+				12E0F43014F4BBAC00B2985E /* Frameworks */,
+				12E0F42E14F4BBAC00B2985E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12E0F42E14F4BBAC00B2985E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12E0F42D14F4BBAC00B2985E /* YuxinPainter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12E0F43014F4BBAC00B2985E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12E0F43114F4BBAC00B2985E /* UIKit.framework */,
+				12E0F43314F4BBAC00B2985E /* Foundation.framework */,
+				12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		12E0F43714F4BBAC00B2985E /* YuxinPainter */ = {
+			isa = PBXGroup;
+			children = (
+				12E0F46314F4BC9B00B2985E /* Tools */,
+				12E0F44E14F4BBE600B2985E /* Images */,
+				12E0F44014F4BBAC00B2985E /* AppDelegate.h */,
+				12E0F44114F4BBAC00B2985E /* AppDelegate.m */,
+				12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */,
+				12E0F44614F4BBAC00B2985E /* ViewController.h */,
+				12E0F44714F4BBAC00B2985E /* ViewController.m */,
+				12E0F43814F4BBAC00B2985E /* Supporting Files */,
+				12E0F46414F4BD6E00B2985E /* MainViewController.h */,
+				12E0F46514F4BD6E00B2985E /* MainViewController.m */,
+			);
+			path = YuxinPainter;
+			sourceTree = "<group>";
+		};
+		12E0F43814F4BBAC00B2985E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				12E0F43914F4BBAC00B2985E /* YuxinPainter-Info.plist */,
+				12E0F43A14F4BBAC00B2985E /* InfoPlist.strings */,
+				12E0F43D14F4BBAC00B2985E /* main.m */,
+				12E0F43F14F4BBAC00B2985E /* YuxinPainter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12E0F44E14F4BBE600B2985E /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */,
+				12E0F45014F4BBFB00B2985E /* button_bezier.png */,
+				12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */,
+				12E0F45214F4BBFB00B2985E /* button_cdots.png */,
+				12E0F45314F4BBFB00B2985E /* button_ellipse_selected.png */,
+				12E0F45414F4BBFB00B2985E /* button_ellipse.png */,
+				12E0F45514F4BBFB00B2985E /* button_line_selected.png */,
+				12E0F45614F4BBFB00B2985E /* button_line.png */,
+				12E0F45714F4BBFB00B2985E /* button_rectangle_selected.png */,
+				12E0F45814F4BBFB00B2985E /* button_rectangle.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		12E0F46314F4BC9B00B2985E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12E0F42C14F4BBAC00B2985E /* YuxinPainter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12E0F44B14F4BBAC00B2985E /* Build configuration list for PBXNativeTarget "YuxinPainter" */;
+			buildPhases = (
+				12E0F42914F4BBAC00B2985E /* Sources */,
+				12E0F42A14F4BBAC00B2985E /* Frameworks */,
+				12E0F42B14F4BBAC00B2985E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YuxinPainter;
+			productName = YuxinPainter;
+			productReference = 12E0F42D14F4BBAC00B2985E /* YuxinPainter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12E0F42414F4BBAC00B2985E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 12E0F42714F4BBAC00B2985E /* Build configuration list for PBXProject "YuxinPainter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 12E0F42214F4BBAC00B2985E;
+			productRefGroup = 12E0F42E14F4BBAC00B2985E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12E0F42C14F4BBAC00B2985E /* YuxinPainter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12E0F42B14F4BBAC00B2985E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E0F43C14F4BBAC00B2985E /* InfoPlist.strings in Resources */,
+				12E0F44514F4BBAC00B2985E /* MainStoryboard.storyboard in Resources */,
+				12E0F45914F4BBFB00B2985E /* button_bezier_selected.png in Resources */,
+				12E0F45A14F4BBFB00B2985E /* button_bezier.png in Resources */,
+				12E0F45B14F4BBFB00B2985E /* button_cdots_selected.png in Resources */,
+				12E0F45C14F4BBFB00B2985E /* button_cdots.png in Resources */,
+				12E0F45D14F4BBFB00B2985E /* button_ellipse_selected.png in Resources */,
+				12E0F45E14F4BBFB00B2985E /* button_ellipse.png in Resources */,
+				12E0F45F14F4BBFB00B2985E /* button_line_selected.png in Resources */,
+				12E0F46014F4BBFB00B2985E /* button_line.png in Resources */,
+				12E0F46114F4BBFB00B2985E /* button_rectangle_selected.png in Resources */,
+				12E0F46214F4BBFB00B2985E /* button_rectangle.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12E0F42914F4BBAC00B2985E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12E0F43E14F4BBAC00B2985E /* main.m in Sources */,
+				12E0F44214F4BBAC00B2985E /* AppDelegate.m in Sources */,
+				12E0F44814F4BBAC00B2985E /* ViewController.m in Sources */,
+				12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		12E0F43A14F4BBAC00B2985E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12E0F43B14F4BBAC00B2985E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12E0F44414F4BBAC00B2985E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12E0F44914F4BBAC00B2985E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		12E0F44A14F4BBAC00B2985E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12E0F44C14F4BBAC00B2985E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YuxinPainter/YuxinPainter-Prefix.pch";
+				INFOPLIST_FILE = "YuxinPainter/YuxinPainter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		12E0F44D14F4BBAC00B2985E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YuxinPainter/YuxinPainter-Prefix.pch";
+				INFOPLIST_FILE = "YuxinPainter/YuxinPainter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12E0F42714F4BBAC00B2985E /* Build configuration list for PBXProject "YuxinPainter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E0F44914F4BBAC00B2985E /* Debug */,
+				12E0F44A14F4BBAC00B2985E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12E0F44B14F4BBAC00B2985E /* Build configuration list for PBXNativeTarget "YuxinPainter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12E0F44C14F4BBAC00B2985E /* Debug */,
+				12E0F44D14F4BBAC00B2985E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12E0F42414F4BBAC00B2985E /* Project object */;
+}
