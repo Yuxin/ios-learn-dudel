@@ -26,6 +26,8 @@
 		12E0F46114F4BBFB00B2985E /* button_rectangle_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45714F4BBFB00B2985E /* button_rectangle_selected.png */; };
 		12E0F46214F4BBFB00B2985E /* button_rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45814F4BBFB00B2985E /* button_rectangle.png */; };
 		12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F46514F4BD6E00B2985E /* MainViewController.m */; };
+		12E0F47414F4CB8400B2985E /* DudelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47314F4CB8400B2985E /* DudelView.m */; };
+		12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47614F4D27B00B2985E /* PencilTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,12 @@
 		12E0F45814F4BBFB00B2985E /* button_rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_rectangle.png; sourceTree = "<group>"; };
 		12E0F46414F4BD6E00B2985E /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		12E0F46514F4BD6E00B2985E /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		12E0F46B14F4CA0F00B2985E /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		12E0F46F14F4CA9600B2985E /* Drawable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drawable.h; sourceTree = "<group>"; };
+		12E0F47214F4CB8400B2985E /* DudelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DudelView.h; sourceTree = "<group>"; };
+		12E0F47314F4CB8400B2985E /* DudelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DudelView.m; sourceTree = "<group>"; };
+		12E0F47514F4D27B00B2985E /* PencilTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PencilTool.h; sourceTree = "<group>"; };
+		12E0F47614F4D27B00B2985E /* PencilTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PencilTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,16 +108,18 @@
 		12E0F43714F4BBAC00B2985E /* YuxinPainter */ = {
 			isa = PBXGroup;
 			children = (
+				12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */,
 				12E0F46314F4BC9B00B2985E /* Tools */,
 				12E0F44E14F4BBE600B2985E /* Images */,
 				12E0F44014F4BBAC00B2985E /* AppDelegate.h */,
 				12E0F44114F4BBAC00B2985E /* AppDelegate.m */,
-				12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */,
 				12E0F44614F4BBAC00B2985E /* ViewController.h */,
 				12E0F44714F4BBAC00B2985E /* ViewController.m */,
 				12E0F43814F4BBAC00B2985E /* Supporting Files */,
 				12E0F46414F4BD6E00B2985E /* MainViewController.h */,
 				12E0F46514F4BD6E00B2985E /* MainViewController.m */,
+				12E0F47214F4CB8400B2985E /* DudelView.h */,
+				12E0F47314F4CB8400B2985E /* DudelView.m */,
 			);
 			path = YuxinPainter;
 			sourceTree = "<group>";
@@ -145,6 +155,10 @@
 		12E0F46314F4BC9B00B2985E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				12E0F46B14F4CA0F00B2985E /* Tool.h */,
+				12E0F46F14F4CA9600B2985E /* Drawable.h */,
+				12E0F47514F4D27B00B2985E /* PencilTool.h */,
+				12E0F47614F4D27B00B2985E /* PencilTool.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -225,6 +239,8 @@
 				12E0F44214F4BBAC00B2985E /* AppDelegate.m in Sources */,
 				12E0F44814F4BBAC00B2985E /* ViewController.m in Sources */,
 				12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */,
+				12E0F47414F4CB8400B2985E /* DudelView.m in Sources */,
+				12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +354,7 @@
 				12E0F44D14F4BBAC00B2985E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

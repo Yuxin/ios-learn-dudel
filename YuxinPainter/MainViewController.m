@@ -7,21 +7,44 @@
 //
 
 #import "MainViewController.h"
+#import "Tool.h"
+#import "DudelView.h"
 
-@interface MainViewController()
+@interface MainViewController() <ToolDelegate, DudelViewDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawDotsItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawLineItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawRectangleItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawEllipseItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawBezierItem;
+@property (strong, nonatomic) IBOutlet DudelView *dudelView;
+
+@property (strong, nonatomic) id <Tool> currentTool;
+
+@property (strong, nonatomic) UIColor *fillColor;
+@property (strong, nonatomic) UIColor *strokeColor;
+@property (nonatomic) CGFloat strokeWidth;
 @end
 
 @implementation MainViewController
 @synthesize drawDotsItem;
 @synthesize drawBezierItem;
+@synthesize dudelView;
 @synthesize drawLineItem;
 @synthesize drawRectangleItem;
 @synthesize drawEllipseItem;
+@synthesize currentTool = _currentTool;
+@synthesize fillColor = _fillColor, strokeColor = _strokeColor, strokeWidth = _strokeWidth;
+
+- (void)setCurrentTool:(id<Tool>)currentTool
+{
+    [self.currentTool deactivate];
+    if (_currentTool != currentTool) {
+        _currentTool = currentTool;
+        _currentTool.delegate = self;
+    }
+    [_currentTool activate];
+    [self.dudelView setNeedsDisplay];
+}
 
 - (void)deselectAllBarItems
 {
@@ -57,22 +80,39 @@
     self.drawBezierItem.image = [UIImage imageNamed:@"button_bezier_selected.png"];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.currentTool touchesBegan:touches withEvent:event];
+    [self.dudelView setNeedsDisplay];    
+}
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.currentTool touchesCancelled:touches withEvent:event];
+    [self.dudelView setNeedsDisplay];    
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.currentTool touchesEnded:touches withEvent:event];
+    [self.dudelView setNeedsDisplay];    
+}
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.currentTool touchesMoved:touches withEvent:event];
+    [self.dudelView setNeedsDisplay];
+}
+
+
 #pragma mark - View lifecycle
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
-{
-}
-*/
-
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.fillColor = [UIColor lightGrayColor];
+    self.strokeColor = [UIColor blackColor];
+    self.strokeWidth = 2.0f;
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -83,6 +123,7 @@
     [self setDrawLineItem:nil];
     [self setDrawRectangleItem:nil];
     [self setDrawEllipseItem:nil];
+    [self setDudelView:nil];
     [super viewDidUnload];
 }
 
@@ -90,6 +131,23 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark -- Tool Delegate
+- (void)addDrawable:(id <Drawable>)d
+{
+    [self.dudelView.drawbles addObject:d];
+    [dudelView setNeedsDisplay];
+}
+- (UIView *)viewForUseWithTool:(id <Tool>)t
+{
+    return self.view;
+}
+
+#pragma mark -- DudelView Delegate
+- (void)drawTemporary
+{
+    [self.currentTool drawTemporary];
 }
 
 @end
