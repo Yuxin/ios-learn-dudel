@@ -29,10 +29,10 @@
 
 @protocol ToolDelegate
 
+@property (nonatomic, strong) UIColor *strokeColor;
+@property (nonatomic, strong) UIColor *fillColor;
+@property (nonatomic) CGFloat strokeWidth;
 - (void)addDrawable:(id <Drawable>)d;
 - (UIView *)viewForUseWithTool:(id <Tool>)t;
-- (UIColor *)strokeColor;
-- (UIColor *)fillColor;
-- (CGFloat)strokeWidth;
 
 @end

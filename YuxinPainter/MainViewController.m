@@ -9,6 +9,10 @@
 #import "MainViewController.h"
 #import "Tool.h"
 #import "DudelView.h"
+#import "PencilTool.h"
+#import "LineTool.h"
+#import "RectangleTool.h"
+#import "EllipseTool.h"
 
 @interface MainViewController() <ToolDelegate, DudelViewDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawDotsItem;
@@ -20,9 +24,6 @@
 
 @property (strong, nonatomic) id <Tool> currentTool;
 
-@property (strong, nonatomic) UIColor *fillColor;
-@property (strong, nonatomic) UIColor *strokeColor;
-@property (nonatomic) CGFloat strokeWidth;
 @end
 
 @implementation MainViewController
@@ -57,22 +58,26 @@
 
 - (IBAction)touchDrawDotsItem:(id)sender {
     [self deselectAllBarItems];
+    self.currentTool = [PencilTool sharedPencilTool];
     self.drawDotsItem.image = [UIImage imageNamed:@"button_cdots_selected.png"];
 }
 
 
 - (IBAction)touchDrawLineItem:(id)sender {
     [self deselectAllBarItems];    
+    self.currentTool = [LineTool sharedLineTool];
     self.drawLineItem.image = [UIImage imageNamed:@"button_line_selected.png"];
 }
 
 - (IBAction)touchDrawRectangleItem:(id)sender {
     [self deselectAllBarItems];    
+    self.currentTool = [RectangleTool sharedRectangleTool];    
     self.drawRectangleItem.image = [UIImage imageNamed:@"button_rectangle_selected.png"];
 }
 
 - (IBAction)touchDrawEclipseItem:(id)sender {
     [self deselectAllBarItems];    
+    self.currentTool = [EllipseTool sharedRectangleTool];
     self.drawEllipseItem.image = [UIImage imageNamed:@"button_ellipse_selected.png"];    
 }
 - (IBAction)touchDrawBezierItem:(id)sender {
@@ -108,6 +113,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.currentTool = [PencilTool sharedPencilTool];
     
     self.fillColor = [UIColor lightGrayColor];
     self.strokeColor = [UIColor blackColor];

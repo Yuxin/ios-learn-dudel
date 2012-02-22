@@ -17,5 +17,5 @@
 
 @interface DudelView : UIView
 @property (nonatomic, strong) NSMutableArray *drawbles;
-@property (nonatomic, strong) id <DudelViewDelegate> delegate;
+@property (nonatomic, strong) IBOutlet id <DudelViewDelegate> delegate;
 @end

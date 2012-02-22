@@ -1,5 +1,5 @@
 //
-//  PencilTool.h
+//  LineTool.h
 //  YuxinPainter
 //
 //  Created by 杨裕欣 on 12-2-22.
@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Tool.h"
 
-@interface PencilTool : NSObject <Tool>
-+ (PencilTool *)sharedPencilTool;
+@interface LineTool : NSObject <Tool>
++ (LineTool *)sharedLineTool;
 @end

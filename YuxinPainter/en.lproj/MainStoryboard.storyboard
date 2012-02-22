@@ -17,7 +17,7 @@
                                 <rect key="frame" x="0.0" y="960" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem image="button_cdots.png" style="plain" id="kBd-wg-sN2">
+                                    <barButtonItem image="button_cdots_selected.png" style="plain" id="kBd-wg-sN2">
                                         <connections>
                                             <action selector="touchDrawDotsItem:" destination="2" id="2S0-kq-4MS"/>
                                         </connections>
@@ -50,6 +50,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="M4u-h6-l73"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -68,11 +71,30 @@
     </scenes>
     <resources>
         <image name="button_bezier.png" width="46" height="32"/>
-        <image name="button_cdots.png" width="46" height="32"/>
+        <image name="button_cdots_selected.png" width="46" height="32"/>
         <image name="button_ellipse.png" width="46" height="32"/>
         <image name="button_line.png" width="46" height="32"/>
         <image name="button_rectangle.png" width="46" height="32"/>
     </resources>
+    <classes>
+        <class className="DudelView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DudelView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="drawBezierItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="drawDotsItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="drawEllipseItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="drawLineItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="drawRectangleItem" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="dudelView" candidateClass="DudelView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

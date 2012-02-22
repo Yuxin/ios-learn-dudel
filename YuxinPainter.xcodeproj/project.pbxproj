@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12038BAE14F4E27E005E159D /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BAD14F4E27E005E159D /* LineTool.m */; };
+		12038BB214F4EAAC005E159D /* RectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB114F4EAAC005E159D /* RectangleTool.m */; };
+		12038BB514F4EF96005E159D /* EllipseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB414F4EF96005E159D /* EllipseTool.m */; };
 		12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43114F4BBAC00B2985E /* UIKit.framework */; };
 		12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43314F4BBAC00B2985E /* Foundation.framework */; };
 		12E0F43614F4BBAC00B2985E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */; };
@@ -28,9 +31,16 @@
 		12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F46514F4BD6E00B2985E /* MainViewController.m */; };
 		12E0F47414F4CB8400B2985E /* DudelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47314F4CB8400B2985E /* DudelView.m */; };
 		12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47614F4D27B00B2985E /* PencilTool.m */; };
+		12E0F47E14F4D92700B2985E /* PathDrawingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12038BAC14F4E27E005E159D /* LineTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTool.h; sourceTree = "<group>"; };
+		12038BAD14F4E27E005E159D /* LineTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTool.m; sourceTree = "<group>"; };
+		12038BB014F4EAAC005E159D /* RectangleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectangleTool.h; sourceTree = "<group>"; };
+		12038BB114F4EAAC005E159D /* RectangleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleTool.m; sourceTree = "<group>"; };
+		12038BB314F4EF96005E159D /* EllipseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipseTool.h; sourceTree = "<group>"; };
+		12038BB414F4EF96005E159D /* EllipseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipseTool.m; sourceTree = "<group>"; };
 		12E0F42D14F4BBAC00B2985E /* YuxinPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuxinPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E0F43114F4BBAC00B2985E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12E0F43314F4BBAC00B2985E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,6 +72,8 @@
 		12E0F47314F4CB8400B2985E /* DudelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DudelView.m; sourceTree = "<group>"; };
 		12E0F47514F4D27B00B2985E /* PencilTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PencilTool.h; sourceTree = "<group>"; };
 		12E0F47614F4D27B00B2985E /* PencilTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PencilTool.m; sourceTree = "<group>"; };
+		12E0F47C14F4D92600B2985E /* PathDrawingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathDrawingInfo.h; sourceTree = "<group>"; };
+		12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathDrawingInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +168,17 @@
 			isa = PBXGroup;
 			children = (
 				12E0F46B14F4CA0F00B2985E /* Tool.h */,
-				12E0F46F14F4CA9600B2985E /* Drawable.h */,
 				12E0F47514F4D27B00B2985E /* PencilTool.h */,
 				12E0F47614F4D27B00B2985E /* PencilTool.m */,
+				12038BAC14F4E27E005E159D /* LineTool.h */,
+				12038BAD14F4E27E005E159D /* LineTool.m */,
+				12038BB014F4EAAC005E159D /* RectangleTool.h */,
+				12038BB114F4EAAC005E159D /* RectangleTool.m */,
+				12038BB314F4EF96005E159D /* EllipseTool.h */,
+				12038BB414F4EF96005E159D /* EllipseTool.m */,
+				12E0F46F14F4CA9600B2985E /* Drawable.h */,
+				12E0F47C14F4D92600B2985E /* PathDrawingInfo.h */,
+				12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -241,6 +261,10 @@
 				12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */,
 				12E0F47414F4CB8400B2985E /* DudelView.m in Sources */,
 				12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */,
+				12E0F47E14F4D92700B2985E /* PathDrawingInfo.m in Sources */,
+				12038BAE14F4E27E005E159D /* LineTool.m in Sources */,
+				12038BB214F4EAAC005E159D /* RectangleTool.m in Sources */,
+				12038BB514F4EF96005E159D /* EllipseTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
