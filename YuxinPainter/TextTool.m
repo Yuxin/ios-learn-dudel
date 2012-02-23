@@ -7,6 +7,7 @@
 //
 
 #import "TextTool.h"
+#import "TextDrawingInfo.h"
 
 static CGFloat distance_between_two_points(const CGPoint p1, const CGPoint p2) {
     return sqrt(pow(p2.x - p1.x, 2) + pow(p2.y - p1.y, 2));
@@ -145,11 +146,67 @@ static TextTool *_sharedInstance;
 
 - (void)keyboardWillShow:(id)sender
 {
-    
+    UIInterfaceOrientation orientation = ((UIViewController *)(self.delegate)).interfaceOrientation;
+    [UIView beginAnimations:@"view slide up" context:NULL];
+    UIView *view = [self.delegate viewForUseWithTool:self];
+    CGRect frame = view.frame;
+    switch (orientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+            frame.origin.x -= self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            frame.origin.x += self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationPortrait:
+            frame.origin.y -= self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            frame.origin.y += self.viewSlideDistance;
+            break; 
+        default:
+            break;
+    }
+    view.frame = frame;
+    [UIView commitAnimations];
 }
 
 - (void)keyboardWillHide:(id)sender
 {
+    UIInterfaceOrientation orientation = ((UIViewController *)(self.delegate)).interfaceOrientation;
+    [UIView beginAnimations:@"view slide up" context:NULL];
+    UIView *view = [self.delegate viewForUseWithTool:self];
+    CGRect frame = view.frame;
+    switch (orientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+            frame.origin.x += self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            frame.origin.x -= self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationPortrait:
+            frame.origin.y += self.viewSlideDistance;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            frame.origin.y -= self.viewSlideDistance;
+            break; 
+        default:
+            break;
+    }
+    view.frame = frame;
+    [UIView commitAnimations];
+}
+
+#pragma mark - TextView Delegate
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    // add drawable...
+    TextDrawingInfo *drawInfo = [TextDrawingInfo textDrawingInfoWithPath:self.completedPath text:textView.text strokeColor:self.delegate.strokeColor font:self.delegate.font];
+    [self.delegate addDrawable:drawInfo];
     
+    self.completedPath = nil;
+    [[textView.superview viewWithTag:10000] removeFromSuperview];
+    [textView resignFirstResponder];
+    [textView removeFromSuperview];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end

@@ -37,6 +37,7 @@
 		12F0751014F607A50075E5C4 /* button_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F0750E14F607A50075E5C4 /* button_text.png */; };
 		12F0751314F608310075E5C4 /* TextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F0751214F608310075E5C4 /* TextTool.m */; };
 		12F0751614F60A290075E5C4 /* TextDrawingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F0751514F60A290075E5C4 /* TextDrawingInfo.m */; };
+		12F0751814F6599E0075E5C4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F0751714F6599D0075E5C4 /* CoreText.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		12F0751214F608310075E5C4 /* TextTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTool.m; sourceTree = "<group>"; };
 		12F0751414F60A290075E5C4 /* TextDrawingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDrawingInfo.h; sourceTree = "<group>"; };
 		12F0751514F60A290075E5C4 /* TextDrawingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDrawingInfo.m; sourceTree = "<group>"; };
+		12F0751714F6599D0075E5C4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F0751814F6599E0075E5C4 /* CoreText.framework in Frameworks */,
 				12F0750314F601B90075E5C4 /* MessageUI.framework in Frameworks */,
 				12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */,
 				12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */,
@@ -106,6 +109,7 @@
 		12E0F42214F4BBAC00B2985E = {
 			isa = PBXGroup;
 			children = (
+				12F0751714F6599D0075E5C4 /* CoreText.framework */,
 				12E0F43714F4BBAC00B2985E /* YuxinPainter */,
 				12E0F43014F4BBAC00B2985E /* Frameworks */,
 				12E0F42E14F4BBAC00B2985E /* Products */,
