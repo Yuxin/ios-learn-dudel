@@ -17,7 +17,6 @@
 		12E0F43E14F4BBAC00B2985E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F43D14F4BBAC00B2985E /* main.m */; };
 		12E0F44214F4BBAC00B2985E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F44114F4BBAC00B2985E /* AppDelegate.m */; };
 		12E0F44514F4BBAC00B2985E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */; };
-		12E0F44814F4BBAC00B2985E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F44714F4BBAC00B2985E /* ViewController.m */; };
 		12E0F45914F4BBFB00B2985E /* button_bezier_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */; };
 		12E0F45A14F4BBFB00B2985E /* button_bezier.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45014F4BBFB00B2985E /* button_bezier.png */; };
 		12E0F45B14F4BBFB00B2985E /* button_cdots_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */; };
@@ -32,6 +31,12 @@
 		12E0F47414F4CB8400B2985E /* DudelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47314F4CB8400B2985E /* DudelView.m */; };
 		12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47614F4D27B00B2985E /* PencilTool.m */; };
 		12E0F47E14F4D92700B2985E /* PathDrawingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */; };
+		12F074FC14F52A5E0075E5C4 /* FreeHandTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F074FB14F52A5E0075E5C4 /* FreeHandTool.m */; };
+		12F0750314F601B90075E5C4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F0750214F601B90075E5C4 /* MessageUI.framework */; };
+		12F0750F14F607A50075E5C4 /* button_text_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F0750D14F607A50075E5C4 /* button_text_selected.png */; };
+		12F0751014F607A50075E5C4 /* button_text.png in Resources */ = {isa = PBXBuildFile; fileRef = 12F0750E14F607A50075E5C4 /* button_text.png */; };
+		12F0751314F608310075E5C4 /* TextTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F0751214F608310075E5C4 /* TextTool.m */; };
+		12F0751614F60A290075E5C4 /* TextDrawingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F0751514F60A290075E5C4 /* TextDrawingInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +57,6 @@
 		12E0F44014F4BBAC00B2985E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12E0F44114F4BBAC00B2985E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		12E0F44414F4BBAC00B2985E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		12E0F44614F4BBAC00B2985E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		12E0F44714F4BBAC00B2985E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bezier_selected.png; sourceTree = "<group>"; };
 		12E0F45014F4BBFB00B2985E /* button_bezier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_bezier.png; sourceTree = "<group>"; };
 		12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_cdots_selected.png; sourceTree = "<group>"; };
@@ -74,6 +77,15 @@
 		12E0F47614F4D27B00B2985E /* PencilTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PencilTool.m; sourceTree = "<group>"; };
 		12E0F47C14F4D92600B2985E /* PathDrawingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathDrawingInfo.h; sourceTree = "<group>"; };
 		12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathDrawingInfo.m; sourceTree = "<group>"; };
+		12F074FA14F52A5E0075E5C4 /* FreeHandTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeHandTool.h; sourceTree = "<group>"; };
+		12F074FB14F52A5E0075E5C4 /* FreeHandTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeHandTool.m; sourceTree = "<group>"; };
+		12F0750214F601B90075E5C4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		12F0750D14F607A50075E5C4 /* button_text_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_text_selected.png; sourceTree = "<group>"; };
+		12F0750E14F607A50075E5C4 /* button_text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_text.png; sourceTree = "<group>"; };
+		12F0751114F608310075E5C4 /* TextTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextTool.h; sourceTree = "<group>"; };
+		12F0751214F608310075E5C4 /* TextTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextTool.m; sourceTree = "<group>"; };
+		12F0751414F60A290075E5C4 /* TextDrawingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextDrawingInfo.h; sourceTree = "<group>"; };
+		12F0751514F60A290075E5C4 /* TextDrawingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextDrawingInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12F0750314F601B90075E5C4 /* MessageUI.framework in Frameworks */,
 				12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */,
 				12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */,
 				12E0F43614F4BBAC00B2985E /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +123,7 @@
 		12E0F43014F4BBAC00B2985E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12F0750214F601B90075E5C4 /* MessageUI.framework */,
 				12E0F43114F4BBAC00B2985E /* UIKit.framework */,
 				12E0F43314F4BBAC00B2985E /* Foundation.framework */,
 				12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */,
@@ -125,8 +139,6 @@
 				12E0F44E14F4BBE600B2985E /* Images */,
 				12E0F44014F4BBAC00B2985E /* AppDelegate.h */,
 				12E0F44114F4BBAC00B2985E /* AppDelegate.m */,
-				12E0F44614F4BBAC00B2985E /* ViewController.h */,
-				12E0F44714F4BBAC00B2985E /* ViewController.m */,
 				12E0F43814F4BBAC00B2985E /* Supporting Files */,
 				12E0F46414F4BD6E00B2985E /* MainViewController.h */,
 				12E0F46514F4BD6E00B2985E /* MainViewController.m */,
@@ -150,6 +162,8 @@
 		12E0F44E14F4BBE600B2985E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				12F0750D14F607A50075E5C4 /* button_text_selected.png */,
+				12F0750E14F607A50075E5C4 /* button_text.png */,
 				12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */,
 				12E0F45014F4BBFB00B2985E /* button_bezier.png */,
 				12E0F45114F4BBFB00B2985E /* button_cdots_selected.png */,
@@ -176,9 +190,15 @@
 				12038BB114F4EAAC005E159D /* RectangleTool.m */,
 				12038BB314F4EF96005E159D /* EllipseTool.h */,
 				12038BB414F4EF96005E159D /* EllipseTool.m */,
+				12F074FA14F52A5E0075E5C4 /* FreeHandTool.h */,
+				12F074FB14F52A5E0075E5C4 /* FreeHandTool.m */,
+				12F0751114F608310075E5C4 /* TextTool.h */,
+				12F0751214F608310075E5C4 /* TextTool.m */,
 				12E0F46F14F4CA9600B2985E /* Drawable.h */,
 				12E0F47C14F4D92600B2985E /* PathDrawingInfo.h */,
 				12E0F47D14F4D92700B2985E /* PathDrawingInfo.m */,
+				12F0751414F60A290075E5C4 /* TextDrawingInfo.h */,
+				12F0751514F60A290075E5C4 /* TextDrawingInfo.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -245,6 +265,8 @@
 				12E0F46014F4BBFB00B2985E /* button_line.png in Resources */,
 				12E0F46114F4BBFB00B2985E /* button_rectangle_selected.png in Resources */,
 				12E0F46214F4BBFB00B2985E /* button_rectangle.png in Resources */,
+				12F0750F14F607A50075E5C4 /* button_text_selected.png in Resources */,
+				12F0751014F607A50075E5C4 /* button_text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +279,6 @@
 			files = (
 				12E0F43E14F4BBAC00B2985E /* main.m in Sources */,
 				12E0F44214F4BBAC00B2985E /* AppDelegate.m in Sources */,
-				12E0F44814F4BBAC00B2985E /* ViewController.m in Sources */,
 				12E0F46614F4BD6E00B2985E /* MainViewController.m in Sources */,
 				12E0F47414F4CB8400B2985E /* DudelView.m in Sources */,
 				12E0F47714F4D27B00B2985E /* PencilTool.m in Sources */,
@@ -265,6 +286,9 @@
 				12038BAE14F4E27E005E159D /* LineTool.m in Sources */,
 				12038BB214F4EAAC005E159D /* RectangleTool.m in Sources */,
 				12038BB514F4EF96005E159D /* EllipseTool.m in Sources */,
+				12F074FC14F52A5E0075E5C4 /* FreeHandTool.m in Sources */,
+				12F0751314F608310075E5C4 /* TextTool.m in Sources */,
+				12F0751614F60A290075E5C4 /* TextDrawingInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

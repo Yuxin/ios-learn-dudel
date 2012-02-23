@@ -32,6 +32,7 @@
 @property (nonatomic, strong) UIColor *strokeColor;
 @property (nonatomic, strong) UIColor *fillColor;
 @property (nonatomic) CGFloat strokeWidth;
+@property (nonatomic, strong) UIFont *font;
 - (void)addDrawable:(id <Drawable>)d;
 - (UIView *)viewForUseWithTool:(id <Tool>)t;
 

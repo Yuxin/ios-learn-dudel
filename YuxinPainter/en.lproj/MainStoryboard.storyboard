@@ -42,8 +42,17 @@
                                             <action selector="touchDrawBezierItem:" destination="2" id="x4R-xe-yVV"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem image="button_text.png" style="plain" id="4as-8m-MUv">
+                                        <connections>
+                                            <action selector="touchDrawTextItem:" destination="2" id="YKl-QK-9Ci"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="d2C-oN-ip6"/>
-                                    <barButtonItem title="发送Email" id="lCb-rp-NQ7"/>
+                                    <barButtonItem title="发送Email" id="lCb-rp-NQ7">
+                                        <connections>
+                                            <action selector="sendPDF:" destination="2" id="6FB-HN-aSK"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" id="KVu-wc-Smf" customClass="DudelView">
@@ -63,6 +72,7 @@
                         <outlet property="drawEllipseItem" destination="61p-EG-FLP" id="1gr-e5-Cfm"/>
                         <outlet property="drawLineItem" destination="dZk-jL-ilQ" id="YpG-lt-1UR"/>
                         <outlet property="drawRectangleItem" destination="kxY-Hw-MJl" id="hPf-Ap-Uuc"/>
+                        <outlet property="drawTextItem" destination="4as-8m-MUv" id="jaL-vx-2lo"/>
                         <outlet property="dudelView" destination="KVu-wc-Smf" id="ixh-lz-cJ6"/>
                     </connections>
                 </viewController>
@@ -75,26 +85,8 @@
         <image name="button_ellipse.png" width="46" height="32"/>
         <image name="button_line.png" width="46" height="32"/>
         <image name="button_rectangle.png" width="46" height="32"/>
+        <image name="button_text.png" width="46" height="32"/>
     </resources>
-    <classes>
-        <class className="DudelView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DudelView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="drawBezierItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="drawDotsItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="drawEllipseItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="drawLineItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="drawRectangleItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dudelView" candidateClass="DudelView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
