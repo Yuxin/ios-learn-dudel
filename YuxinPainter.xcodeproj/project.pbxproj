@@ -10,6 +10,13 @@
 		12038BAE14F4E27E005E159D /* LineTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BAD14F4E27E005E159D /* LineTool.m */; };
 		12038BB214F4EAAC005E159D /* RectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB114F4EAAC005E159D /* RectangleTool.m */; };
 		12038BB514F4EF96005E159D /* EllipseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB414F4EF96005E159D /* EllipseTool.m */; };
+		126A6ECB14F7DAF800776999 /* FontListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126A6ECA14F7DAF800776999 /* FontListViewController.xib */; };
+		129AC9A214F7959A00288ED6 /* button_fillcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99D14F7959A00288ED6 /* button_fillcolor.png */; };
+		129AC9A314F7959A00288ED6 /* button_fontname.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99E14F7959A00288ED6 /* button_fontname.png */; };
+		129AC9A414F7959A00288ED6 /* button_fontsize.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99F14F7959A00288ED6 /* button_fontsize.png */; };
+		129AC9A514F7959A00288ED6 /* button_strokecolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC9A014F7959A00288ED6 /* button_strokecolor.png */; };
+		129AC9A614F7959A00288ED6 /* button_strokewidth.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC9A114F7959A00288ED6 /* button_strokewidth.png */; };
+		129AC9AA14F7975000288ED6 /* FontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129AC9A814F7975000288ED6 /* FontListViewController.m */; };
 		12E0F43214F4BBAC00B2985E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43114F4BBAC00B2985E /* UIKit.framework */; };
 		12E0F43414F4BBAC00B2985E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43314F4BBAC00B2985E /* Foundation.framework */; };
 		12E0F43614F4BBAC00B2985E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E0F43514F4BBAC00B2985E /* CoreGraphics.framework */; };
@@ -47,6 +54,14 @@
 		12038BB114F4EAAC005E159D /* RectangleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectangleTool.m; sourceTree = "<group>"; };
 		12038BB314F4EF96005E159D /* EllipseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipseTool.h; sourceTree = "<group>"; };
 		12038BB414F4EF96005E159D /* EllipseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipseTool.m; sourceTree = "<group>"; };
+		126A6ECA14F7DAF800776999 /* FontListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontListViewController.xib; sourceTree = "<group>"; };
+		129AC99D14F7959A00288ED6 /* button_fillcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fillcolor.png; sourceTree = "<group>"; };
+		129AC99E14F7959A00288ED6 /* button_fontname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontname.png; sourceTree = "<group>"; };
+		129AC99F14F7959A00288ED6 /* button_fontsize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontsize.png; sourceTree = "<group>"; };
+		129AC9A014F7959A00288ED6 /* button_strokecolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_strokecolor.png; sourceTree = "<group>"; };
+		129AC9A114F7959A00288ED6 /* button_strokewidth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_strokewidth.png; sourceTree = "<group>"; };
+		129AC9A714F7975000288ED6 /* FontListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontListViewController.h; sourceTree = "<group>"; };
+		129AC9A814F7975000288ED6 /* FontListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontListViewController.m; sourceTree = "<group>"; };
 		12E0F42D14F4BBAC00B2985E /* YuxinPainter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YuxinPainter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12E0F43114F4BBAC00B2985E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		12E0F43314F4BBAC00B2985E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,7 +124,6 @@
 		12E0F42214F4BBAC00B2985E = {
 			isa = PBXGroup;
 			children = (
-				12F0751714F6599D0075E5C4 /* CoreText.framework */,
 				12E0F43714F4BBAC00B2985E /* YuxinPainter */,
 				12E0F43014F4BBAC00B2985E /* Frameworks */,
 				12E0F42E14F4BBAC00B2985E /* Products */,
@@ -127,6 +141,7 @@
 		12E0F43014F4BBAC00B2985E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				12F0751714F6599D0075E5C4 /* CoreText.framework */,
 				12F0750214F601B90075E5C4 /* MessageUI.framework */,
 				12E0F43114F4BBAC00B2985E /* UIKit.framework */,
 				12E0F43314F4BBAC00B2985E /* Foundation.framework */,
@@ -148,6 +163,9 @@
 				12E0F46514F4BD6E00B2985E /* MainViewController.m */,
 				12E0F47214F4CB8400B2985E /* DudelView.h */,
 				12E0F47314F4CB8400B2985E /* DudelView.m */,
+				129AC9A714F7975000288ED6 /* FontListViewController.h */,
+				129AC9A814F7975000288ED6 /* FontListViewController.m */,
+				126A6ECA14F7DAF800776999 /* FontListViewController.xib */,
 			);
 			path = YuxinPainter;
 			sourceTree = "<group>";
@@ -166,6 +184,11 @@
 		12E0F44E14F4BBE600B2985E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				129AC99D14F7959A00288ED6 /* button_fillcolor.png */,
+				129AC99E14F7959A00288ED6 /* button_fontname.png */,
+				129AC99F14F7959A00288ED6 /* button_fontsize.png */,
+				129AC9A014F7959A00288ED6 /* button_strokecolor.png */,
+				129AC9A114F7959A00288ED6 /* button_strokewidth.png */,
 				12F0750D14F607A50075E5C4 /* button_text_selected.png */,
 				12F0750E14F607A50075E5C4 /* button_text.png */,
 				12E0F44F14F4BBFB00B2985E /* button_bezier_selected.png */,
@@ -271,6 +294,12 @@
 				12E0F46214F4BBFB00B2985E /* button_rectangle.png in Resources */,
 				12F0750F14F607A50075E5C4 /* button_text_selected.png in Resources */,
 				12F0751014F607A50075E5C4 /* button_text.png in Resources */,
+				129AC9A214F7959A00288ED6 /* button_fillcolor.png in Resources */,
+				129AC9A314F7959A00288ED6 /* button_fontname.png in Resources */,
+				129AC9A414F7959A00288ED6 /* button_fontsize.png in Resources */,
+				129AC9A514F7959A00288ED6 /* button_strokecolor.png in Resources */,
+				129AC9A614F7959A00288ED6 /* button_strokewidth.png in Resources */,
+				126A6ECB14F7DAF800776999 /* FontListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +322,7 @@
 				12F074FC14F52A5E0075E5C4 /* FreeHandTool.m in Sources */,
 				12F0751314F608310075E5C4 /* TextTool.m in Sources */,
 				12F0751614F60A290075E5C4 /* TextDrawingInfo.m in Sources */,
+				129AC9AA14F7975000288ED6 /* FontListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

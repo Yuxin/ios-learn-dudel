@@ -15,9 +15,10 @@
 #import "EllipseTool.h"
 #import "FreeHandTool.h"
 #import "TextTool.h"
+#import "FontListViewController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface MainViewController() <ToolDelegate, DudelViewDelegate, MFMailComposeViewControllerDelegate>
+@interface MainViewController() <ToolDelegate, DudelViewDelegate, MFMailComposeViewControllerDelegate, UIPopoverControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawDotsItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawLineItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawRectangleItem;
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawBezierItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawTextItem;
 @property (strong, nonatomic) IBOutlet DudelView *dudelView;
+@property (strong, nonatomic) UIPopoverController *currentPopoverViewController;
 
 @property (strong, nonatomic) id <Tool> currentTool;
 
@@ -40,6 +42,7 @@
 @synthesize drawEllipseItem;
 @synthesize currentTool = _currentTool;
 @synthesize fillColor = _fillColor, strokeColor = _strokeColor, strokeWidth = _strokeWidth, font = _font;
+@synthesize currentPopoverViewController = _currentPopoverViewController;
 
 - (void)setCurrentTool:(id<Tool>)currentTool
 {
@@ -96,6 +99,16 @@
     self.currentTool = [TextTool sharedTextTool];
     self.drawTextItem.image = [UIImage imageNamed:@"button_text_selected.png"];
 }
+- (IBAction)touchFontNameItem:(id)sender {
+    FontListViewController *fontListViewController = [[FontListViewController alloc] initWithNibName:@"FontListViewController" bundle:nil];
+    
+    self.currentPopoverViewController = [[UIPopoverController alloc] initWithContentViewController:fontListViewController];
+    self.currentPopoverViewController.delegate = self;
+    
+    fontListViewController.container = self.currentPopoverViewController;
+    self.currentPopoverViewController.popoverContentSize = CGSizeMake(320.0f, 480.0f);
+    [self.currentPopoverViewController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -117,6 +130,7 @@
     [self.currentTool touchesMoved:touches withEvent:event];
     [self.dudelView setNeedsDisplay];
 }
+
 
 - (IBAction)sendPDF:(id)sender {
     NSMutableData *pdfData = [NSMutableData data];
@@ -190,5 +204,15 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark -- UIPopoverViewController
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+//    if (popoverController.contentViewController)
+    
+    self.currentPopoverViewController = nil;
+}
+
 
 @end
