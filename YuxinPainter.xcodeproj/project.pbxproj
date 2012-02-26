@@ -55,6 +55,7 @@
 		12038BB314F4EF96005E159D /* EllipseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EllipseTool.h; sourceTree = "<group>"; };
 		12038BB414F4EF96005E159D /* EllipseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipseTool.m; sourceTree = "<group>"; };
 		126A6ECA14F7DAF800776999 /* FontListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontListViewController.xib; sourceTree = "<group>"; };
+		1292A91C14FA2071003A4BEE /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
 		129AC99D14F7959A00288ED6 /* button_fillcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fillcolor.png; sourceTree = "<group>"; };
 		129AC99E14F7959A00288ED6 /* button_fontname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontname.png; sourceTree = "<group>"; };
 		129AC99F14F7959A00288ED6 /* button_fontsize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontsize.png; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 				129AC9A714F7975000288ED6 /* FontListViewController.h */,
 				129AC9A814F7975000288ED6 /* FontListViewController.m */,
 				126A6ECA14F7DAF800776999 /* FontListViewController.xib */,
+				1292A91C14FA2071003A4BEE /* PopoverContentViewController.h */,
 			);
 			path = YuxinPainter;
 			sourceTree = "<group>";

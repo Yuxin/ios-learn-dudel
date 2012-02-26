@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopoverContentViewController.h"
 
-@interface FontListViewController : UITableViewController
+@interface FontListViewController : UITableViewController <PopoverContentViewController>
 @property (nonatomic, strong) NSArray *fonts;
 @property (nonatomic, copy) NSString *seletedFontName;
-@property (nonatomic, strong) UIPopoverController *container;
 @end

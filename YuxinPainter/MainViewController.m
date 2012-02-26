@@ -99,16 +99,29 @@
     self.currentTool = [TextTool sharedTextTool];
     self.drawTextItem.image = [UIImage imageNamed:@"button_text_selected.png"];
 }
+
+
+- (void)setupPopoverViewController:(id <PopoverContentViewController>)contentController WithPopoverName: (NSString *)popoverName
+{
+    self.currentPopoverViewController = [[UIPopoverController alloc] initWithContentViewController:(UIViewController *)contentController];
+    self.currentPopoverViewController.delegate = self;    
+
+    contentController.container = self.currentPopoverViewController;       
+    contentController.popoverName = popoverName;
+    
+    self.currentPopoverViewController.popoverContentSize = CGSizeMake(320.0f, 480.0f);
+
+}
 - (IBAction)touchFontNameItem:(id)sender {
     FontListViewController *fontListViewController = [[FontListViewController alloc] initWithNibName:@"FontListViewController" bundle:nil];
+    fontListViewController.seletedFontName = self.font.fontName;
+    [self setupPopoverViewController:fontListViewController WithPopoverName:@"FontListViewControler"];
     
-    self.currentPopoverViewController = [[UIPopoverController alloc] initWithContentViewController:fontListViewController];
-    self.currentPopoverViewController.delegate = self;
-    
-    fontListViewController.container = self.currentPopoverViewController;
-    self.currentPopoverViewController.popoverContentSize = CGSizeMake(320.0f, 480.0f);
     [self.currentPopoverViewController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fontListControllerDidSelect:) name:@"FontListControllerDidSelect" object:fontListViewController];
 }
+
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -209,10 +222,38 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
-//    if (popoverController.contentViewController)
-    
-    self.currentPopoverViewController = nil;
+    [self handleDismissedPopoverController:popoverController];
 }
 
+#pragma mark -- Notification Center Callback
+- (void)fontListControllerDidSelect:(NSNotification *)notification
+{
+    FontListViewController *fontListViewController = [notification object];
+    UIPopoverController *popoverController = fontListViewController.container;
+    [popoverController dismissPopoverAnimated:YES];
+    [self handleDismissedPopoverController:popoverController];
+}
+
+- (void)handleDismissedPopoverController:(UIPopoverController*)popoverController {
+    if ([popoverController.contentViewController isMemberOfClass:[FontListViewController class]]) {
+        // this is the font list, grab the new selection
+        FontListViewController *flc = (FontListViewController *)popoverController.contentViewController;
+        self.font = [UIFont fontWithName:flc.seletedFontName size:self.font.pointSize];
+    }
+//    else if ([popoverController.contentViewController isMemberOfClass:[FontSizeController class]]) {
+//        FontSizeController *fsc = (FontSizeController *)popoverController.contentViewController;
+//        self.font = fsc.font;
+//    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeWidthController class]]) {
+//        StrokeWidthController *swc = (StrokeWidthController *)popoverController.contentViewController;
+//        self.strokeWidth = swc.strokeWidth;
+//    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeColorController class]]) {
+//        StrokeColorController *scc = (StrokeColorController *)popoverController.contentViewController;
+//        self.strokeColor = scc.selectedColor;
+//    } else if ([popoverController.contentViewController isMemberOfClass:[FillColorController class]]) {
+//        FillColorController *fcc = (FillColorController *)popoverController.contentViewController;
+//        self.fillColor = fcc.selectedColor;
+//    }
+    self.currentPopoverViewController = nil;
+}
 
 @end

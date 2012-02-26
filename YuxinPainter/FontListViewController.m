@@ -12,7 +12,8 @@
 @end
 
 @implementation FontListViewController
-@synthesize fonts = _fonts, seletedFontName = _seletedFontName, container = _container;
+@synthesize fonts = _fonts, seletedFontName = _seletedFontName, container = _container, popoverName = _popoverName;
+
 
 #pragma mark -- UIView Lifecycle
 - (void)viewDidLoad
@@ -30,10 +31,9 @@
 - (void)viewDidAppear:(BOOL)animated   
 {
     [super viewDidAppear:YES];
-    NSLog(@"%@", self.tableView);
-    NSLog(@"%d", self.tableView.style);
 }
 
+#pragma mark -- UITableView
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [self.fonts count];
@@ -46,6 +46,27 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Font Name Cell"];
     }
     cell.textLabel.text = [self.fonts objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:[self.fonts objectAtIndex:indexPath.row] size:17.0];
+    if ([self.seletedFontName isEqualToString:[self.fonts objectAtIndex:indexPath.row]]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger oldSelectedRow = [self.fonts indexOfObject:self.seletedFontName];
+    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:oldSelectedRow inSection:0];
+    
+    if (oldSelectedRow != indexPath.row) {
+        self.seletedFontName = [self.fonts objectAtIndex:indexPath.row];
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:oldIndexPath, indexPath, nil] 
+                              withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"FontListControllerDidSelect" object:self];
+    return nil;
 }
 @end
