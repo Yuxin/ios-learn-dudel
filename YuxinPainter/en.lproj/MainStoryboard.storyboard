@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2177" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="SAb-FG-ZgH">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1173"/>
@@ -85,9 +85,75 @@
                         <outlet property="drawRectangleItem" destination="kxY-Hw-MJl" id="hPf-Ap-Uuc"/>
                         <outlet property="drawTextItem" destination="36V-Gs-cLI" id="gAV-na-cAj"/>
                         <outlet property="dudelView" destination="KVu-wc-Smf" id="ixh-lz-cJ6"/>
+                        <outlet property="toolbar" destination="cuZ-PC-NdJ" id="tZx-so-BTX"/>
                     </connections>
                 </viewController>
             </objects>
+            <point key="canvasLocation" x="1512" y="629"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="aAN-ON-oIf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNa-wx-Non" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <splitViewController id="SAb-FG-ZgH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="detailViewController" id="veY-5Q-9da"/>
+                        <segue destination="kcM-WB-QIn" kind="relationship" relationship="masterViewController" id="lbI-WZ-18E"/>
+                    </connections>
+                </splitViewController>
+            </objects>
+            <point key="canvasLocation" x="563" y="-4"/>
+        </scene>
+        <!--Ile List View Controller-->
+        <scene sceneID="zul-lk-Rty">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIb-JI-Gkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="soK-0S-p0e" customClass="FIleListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="40m-Eu-9sV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="788"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GIY-eU-mLa">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="soK-0S-p0e" id="ieC-cU-7UR"/>
+                            <outlet property="delegate" destination="soK-0S-p0e" id="5Wf-Pg-ivQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="EoZ-aK-8Ja">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Se5-ru-fIg"/>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2038" y="-321"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CHD-dD-ipC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f11-uL-PbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="kcM-WB-QIn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0ce-d2-ItQ">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="soK-0S-p0e" kind="relationship" relationship="rootViewController" id="k53-UH-LQL"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1512" y="-321"/>
         </scene>
     </scenes>
     <resources>
@@ -110,6 +176,9 @@
                 <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
+        <class className="FIleListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FIleListViewController.h"/>
+        </class>
         <class className="MainViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
@@ -120,6 +189,7 @@
                 <relationship kind="outlet" name="drawRectangleItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="drawTextItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dudelView" candidateClass="DudelView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
     </classes>

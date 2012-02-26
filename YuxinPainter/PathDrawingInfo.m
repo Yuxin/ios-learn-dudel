@@ -38,4 +38,22 @@
         [self.path stroke];
     }
 }
+
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.path forKey:@"path"];
+    [coder encodeObject:self.fillColor forKey:@"fillColor"];
+    [coder encodeObject:self.strokeColor forKey:@"strokeColor"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if ((self = [self init])) {
+        self.path = [decoder decodeObjectForKey:@"path"];
+        self.fillColor = [decoder decodeObjectForKey:@"fillColor"];
+        self.strokeColor = [decoder decodeObjectForKey:@"strokeColor"];
+    }
+    return self;
+}
 @end

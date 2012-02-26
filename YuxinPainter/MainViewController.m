@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawBezierItem;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *drawTextItem;
 @property (strong, nonatomic) IBOutlet DudelView *dudelView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (strong, nonatomic) UIPopoverController *currentPopoverViewController;
 
 @property (strong, nonatomic) id <Tool> currentTool;
@@ -37,6 +38,7 @@
 @synthesize drawBezierItem;
 @synthesize drawTextItem;
 @synthesize dudelView;
+@synthesize toolbar;
 @synthesize drawLineItem;
 @synthesize drawRectangleItem;
 @synthesize drawEllipseItem;
@@ -110,7 +112,6 @@
     contentController.popoverName = popoverName;
     
     self.currentPopoverViewController.popoverContentSize = CGSizeMake(320.0f, 480.0f);
-
 }
 - (IBAction)touchFontNameItem:(id)sender {
     FontListViewController *fontListViewController = [[FontListViewController alloc] initWithNibName:@"FontListViewController" bundle:nil];
@@ -167,12 +168,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.splitViewController.delegate = self;
+    
     self.currentTool = [PencilTool sharedPencilTool];
     
     self.fillColor = [UIColor lightGrayColor];
     self.strokeColor = [UIColor blackColor];
     self.strokeWidth = 2.0f;
     self.font = [UIFont systemFontOfSize:24.0f];
+    
+    NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *fileName = [[dirs objectAtIndex:0] stringByAppendingPathComponent:@"Untitled.dudledoc"];
+    [self loadFromFile:fileName];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:[UIApplication sharedApplication]];
 }
 
 - (void)viewDidUnload
@@ -186,6 +195,7 @@
     [self setDrawEllipseItem:nil];
     [self setDudelView:nil];
     [self setDrawTextItem:nil];
+    [self setToolbar:nil];
     [super viewDidUnload];
 }
 
@@ -218,12 +228,65 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
+#pragma mark -- UISplitViewController Delegate
+- (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc
+{
+    NSMutableArray *newItems = [self.toolbar.items mutableCopy];
+    [newItems insertObject:barButtonItem atIndex:0];
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    [newItems insertObject:spacer atIndex:1];
+    [self.toolbar setItems:newItems animated:YES];
+    barButtonItem.title = @"My Dudles";
+}
+
+- (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    NSMutableArray *newItems = [self.toolbar.items mutableCopy];
+    [newItems removeObject:barButtonItem];
+    [newItems removeObjectAtIndex:0];
+    [self.toolbar setItems:newItems animated:YES];
+}
+
+
+- (void)splitViewController: (UISplitViewController*)svc popoverController: (UIPopoverController*)pc willPresentViewController:(UIViewController *)aViewController
+{
+    if (self.currentPopoverViewController != nil) {
+        [self.currentPopoverViewController dismissPopoverAnimated:YES];
+        [self handleDismissedPopoverController:self.currentPopoverViewController];
+    }
+    self.currentPopoverViewController = pc;
+}
+
 #pragma mark -- UIPopoverViewController
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
 {
     [self handleDismissedPopoverController:popoverController];
 }
+
+
+- (void)handleDismissedPopoverController:(UIPopoverController*)popoverController {
+    if ([popoverController.contentViewController isMemberOfClass:[FontListViewController class]]) {
+        // this is the font list, grab the new selection
+        FontListViewController *flc = (FontListViewController *)popoverController.contentViewController;
+        self.font = [UIFont fontWithName:flc.seletedFontName size:self.font.pointSize];
+    }
+    //    else if ([popoverController.contentViewController isMemberOfClass:[FontSizeController class]]) {
+    //        FontSizeController *fsc = (FontSizeController *)popoverController.contentViewController;
+    //        self.font = fsc.font;
+    //    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeWidthController class]]) {
+    //        StrokeWidthController *swc = (StrokeWidthController *)popoverController.contentViewController;
+    //        self.strokeWidth = swc.strokeWidth;
+    //    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeColorController class]]) {
+    //        StrokeColorController *scc = (StrokeColorController *)popoverController.contentViewController;
+    //        self.strokeColor = scc.selectedColor;
+    //    } else if ([popoverController.contentViewController isMemberOfClass:[FillColorController class]]) {
+    //        FillColorController *fcc = (FillColorController *)popoverController.contentViewController;
+    //        self.fillColor = fcc.selectedColor;
+    //    }
+    self.currentPopoverViewController = nil;
+}
+
 
 #pragma mark -- Notification Center Callback
 - (void)fontListControllerDidSelect:(NSNotification *)notification
@@ -234,26 +297,28 @@
     [self handleDismissedPopoverController:popoverController];
 }
 
-- (void)handleDismissedPopoverController:(UIPopoverController*)popoverController {
-    if ([popoverController.contentViewController isMemberOfClass:[FontListViewController class]]) {
-        // this is the font list, grab the new selection
-        FontListViewController *flc = (FontListViewController *)popoverController.contentViewController;
-        self.font = [UIFont fontWithName:flc.seletedFontName size:self.font.pointSize];
-    }
-//    else if ([popoverController.contentViewController isMemberOfClass:[FontSizeController class]]) {
-//        FontSizeController *fsc = (FontSizeController *)popoverController.contentViewController;
-//        self.font = fsc.font;
-//    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeWidthController class]]) {
-//        StrokeWidthController *swc = (StrokeWidthController *)popoverController.contentViewController;
-//        self.strokeWidth = swc.strokeWidth;
-//    } else if ([popoverController.contentViewController isMemberOfClass:[StrokeColorController class]]) {
-//        StrokeColorController *scc = (StrokeColorController *)popoverController.contentViewController;
-//        self.strokeColor = scc.selectedColor;
-//    } else if ([popoverController.contentViewController isMemberOfClass:[FillColorController class]]) {
-//        FillColorController *fcc = (FillColorController *)popoverController.contentViewController;
-//        self.fillColor = fcc.selectedColor;
-//    }
-    self.currentPopoverViewController = nil;
+- (void)applicationWillTerminate:(NSNotification *)notification
+{
+    NSLog(@"App will terminate");
+    NSArray *dirs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filename = [[dirs objectAtIndex:0] stringByAppendingPathComponent:@"Untitled.dudledoc"];
+    [self saveCurrentToFile:filename];
 }
 
+
+#pragma mark -- File Saver
+- (BOOL)saveCurrentToFile:(NSString *)fileName
+{
+    return [NSKeyedArchiver archiveRootObject:self.dudelView.drawbles toFile:fileName];
+}
+
+- (BOOL)loadFromFile:(NSString *)fileName
+{
+    id root = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+    if (root) {
+        self.dudelView.drawbles = root;
+        [self.dudelView setNeedsDisplay];
+    }
+    return (root != nil);
+}
 @end

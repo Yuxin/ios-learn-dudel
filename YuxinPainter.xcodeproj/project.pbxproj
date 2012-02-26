@@ -11,6 +11,9 @@
 		12038BB214F4EAAC005E159D /* RectangleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB114F4EAAC005E159D /* RectangleTool.m */; };
 		12038BB514F4EF96005E159D /* EllipseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 12038BB414F4EF96005E159D /* EllipseTool.m */; };
 		126A6ECB14F7DAF800776999 /* FontListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126A6ECA14F7DAF800776999 /* FontListViewController.xib */; };
+		1292A92314FA2ABC003A4BEE /* FileList.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292A92214FA2ABC003A4BEE /* FileList.m */; };
+		1292A92614FA3D3B003A4BEE /* FIleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292A92514FA3D3B003A4BEE /* FIleListViewController.m */; };
+		1292A92914FA4425003A4BEE /* ActionMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292A92814FA4425003A4BEE /* ActionMenuViewController.m */; };
 		129AC9A214F7959A00288ED6 /* button_fillcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99D14F7959A00288ED6 /* button_fillcolor.png */; };
 		129AC9A314F7959A00288ED6 /* button_fontname.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99E14F7959A00288ED6 /* button_fontname.png */; };
 		129AC9A414F7959A00288ED6 /* button_fontsize.png in Resources */ = {isa = PBXBuildFile; fileRef = 129AC99F14F7959A00288ED6 /* button_fontsize.png */; };
@@ -56,6 +59,12 @@
 		12038BB414F4EF96005E159D /* EllipseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EllipseTool.m; sourceTree = "<group>"; };
 		126A6ECA14F7DAF800776999 /* FontListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FontListViewController.xib; sourceTree = "<group>"; };
 		1292A91C14FA2071003A4BEE /* PopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverContentViewController.h; sourceTree = "<group>"; };
+		1292A92114FA2ABC003A4BEE /* FileList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileList.h; sourceTree = "<group>"; };
+		1292A92214FA2ABC003A4BEE /* FileList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileList.m; sourceTree = "<group>"; };
+		1292A92414FA3D3B003A4BEE /* FIleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FIleListViewController.h; sourceTree = "<group>"; };
+		1292A92514FA3D3B003A4BEE /* FIleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FIleListViewController.m; sourceTree = "<group>"; };
+		1292A92714FA4425003A4BEE /* ActionMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionMenuViewController.h; sourceTree = "<group>"; };
+		1292A92814FA4425003A4BEE /* ActionMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionMenuViewController.m; sourceTree = "<group>"; };
 		129AC99D14F7959A00288ED6 /* button_fillcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fillcolor.png; sourceTree = "<group>"; };
 		129AC99E14F7959A00288ED6 /* button_fontname.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontname.png; sourceTree = "<group>"; };
 		129AC99F14F7959A00288ED6 /* button_fontsize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_fontsize.png; sourceTree = "<group>"; };
@@ -122,6 +131,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1292A92014FA2AAC003A4BEE /* FIleList */ = {
+			isa = PBXGroup;
+			children = (
+				1292A92114FA2ABC003A4BEE /* FileList.h */,
+				1292A92214FA2ABC003A4BEE /* FileList.m */,
+				1292A92414FA3D3B003A4BEE /* FIleListViewController.h */,
+				1292A92514FA3D3B003A4BEE /* FIleListViewController.m */,
+			);
+			name = FIleList;
+			sourceTree = "<group>";
+		};
 		12E0F42214F4BBAC00B2985E = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				12E0F44314F4BBAC00B2985E /* MainStoryboard.storyboard */,
+				1292A92014FA2AAC003A4BEE /* FIleList */,
 				12E0F46314F4BC9B00B2985E /* Tools */,
 				12E0F44E14F4BBE600B2985E /* Images */,
 				12E0F44014F4BBAC00B2985E /* AppDelegate.h */,
@@ -168,6 +189,8 @@
 				129AC9A814F7975000288ED6 /* FontListViewController.m */,
 				126A6ECA14F7DAF800776999 /* FontListViewController.xib */,
 				1292A91C14FA2071003A4BEE /* PopoverContentViewController.h */,
+				1292A92714FA4425003A4BEE /* ActionMenuViewController.h */,
+				1292A92814FA4425003A4BEE /* ActionMenuViewController.m */,
 			);
 			path = YuxinPainter;
 			sourceTree = "<group>";
@@ -325,6 +348,9 @@
 				12F0751314F608310075E5C4 /* TextTool.m in Sources */,
 				12F0751614F60A290075E5C4 /* TextDrawingInfo.m in Sources */,
 				129AC9AA14F7975000288ED6 /* FontListViewController.m in Sources */,
+				1292A92314FA2ABC003A4BEE /* FileList.m in Sources */,
+				1292A92614FA3D3B003A4BEE /* FIleListViewController.m in Sources */,
+				1292A92914FA4425003A4BEE /* ActionMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
